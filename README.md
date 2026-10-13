@@ -1,9 +1,3 @@
-# 这是 govo/drumai-cli 仓库的 README
-
-把它放到 `govo/drumai-cli` 仓库根目录的 `README.md`。内容随 CLI 版本更新时可以再改。
-
----
-
 # drumai
 
 Command line tool for [Drum AI](https://apps.apple.com/app/id6782609749) — build drum
@@ -19,8 +13,13 @@ release, or install with Homebrew.
 
 ```sh
 brew tap govo/tap
+brew trust govo/tap
 brew install drumai
 ```
+
+Homebrew 6 and later refuse to load formulae from a third-party tap until it is trusted
+explicitly, so the `brew trust` line is required. This tap holds nothing but `drumai`.
+Older Homebrew has no `trust` command — drop that line and the rest works as is.
 
 ### Manual download
 
@@ -112,8 +111,13 @@ Drum AI 的命令行工具：用命令行造鼓点 PRESET、生成分享链接�
 
 ```sh
 brew tap govo/tap
+brew trust govo/tap
 brew install drumai
 ```
+
+Homebrew 6 起，第三方 tap 必须先显式信任，否则 formula 根本不会被加载，所以
+`brew trust` 这一行是必需的。这个 tap 里只有 `drumai` 一个 formula。更早的 Homebrew
+没有 `trust` 命令，去掉那一行即可。
 
 ### 手动下载
 
